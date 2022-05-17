@@ -7,7 +7,7 @@ void setup()
 {
   ad7150.begin();
   ad7150.setOffset(AD7150_OFFSET_AUTO);
-  ad7150.setRange(AD7150_RANGE_0_4);
+  ad7150.setRange(AD7150_RANGE_0_2);
   ad7150.setup();
 
   Serial.begin(9600);
@@ -22,12 +22,6 @@ void loop()
 
   result = ad7150.getValue();
 
-  /*Serial.print("Status :");
-  Serial.print(result.status, BIN);
-  Serial.print("\t");*/
   //Serial.print("Value :");
-  Serial.print(result.value, DEC);
-  
-  delay(20);
-  Serial.println();
+  Serial.println(result.value, DEC);
 }
